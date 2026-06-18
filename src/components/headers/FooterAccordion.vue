@@ -1,8 +1,8 @@
 <template>
   <div class="accordion-item">
-    <button class="accordion-header" @click="$emit('toggle')">
+    <button class="accordion-header" @click="isOpen = !isOpen">
       <span class="accordion-title">
-        {{ item.title }}
+        {{ title }}
       </span>
 
       <i
@@ -18,24 +18,13 @@
       @leave="leave"
     >
       <div v-show="isOpen" class="accordion-content">
-        <div v-if="item.contentType === 'specs'" class="specs-wrapper">
-          <div
-            v-for="(row, index) in item.content"
-            :key="index"
-            class="spec-row"
-          >
-            <div class="spec-label">{{ row.label }}</div>
-            <div class="spec-value">{{ row.value }}</div>
-          </div>
-        </div>
-
-        <div v-if="item.contentType === 'shipping'" class="shipping-wrapper">
-          <h3>{{ item.content.shippingTitle }}</h3>
-          <p>{{ item.content.shippingText }}</p>
-
-          <h3>{{ item.content.returnTitle }}</h3>
-          <p>{{ item.content.returnText }}</p>
-        </div>
+        <ul class="accordion-list">
+          <li v-for="(item, index) in items" :key="index">
+            <a :href="item.link">
+              {{ item.label }}
+            </a>
+          </li>
+        </ul>
       </div>
     </transition>
   </div>
@@ -44,8 +33,21 @@
 <script>
 export default {
   props: {
-    item: Object,
-    isOpen: Boolean,
+    title: {
+      type: String,
+      required: true,
+    },
+
+    items: {
+      type: Array,
+      required: true,
+    },
+  },
+
+  data() {
+    return {
+      isOpen: false,
+    };
   },
 
   methods: {
@@ -79,29 +81,30 @@ export default {
 
 <style scoped>
 .accordion-item {
-border-bottom: 1px solid #d3d3d3;
+  border-bottom: 1px solid #d3d3d3;
 }
 
 .accordion-header {
   width: 100%;
-  min-height: 90px;
+  min-height: 65px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
   border: none;
   background: none;
   cursor: pointer;
+  padding: 0;
 }
 
 .accordion-title {
-  font-size: 22px;
+  color: #fff;
+  font-size: 15px;
   font-weight: 500;
-  text-align: right;
 }
 
 .accordion-icon {
-  font-size: 18px;
+  color: #fff;
+  font-size: 14px;
   transition: transform 0.3s ease;
 }
 
@@ -110,40 +113,27 @@ border-bottom: 1px solid #d3d3d3;
 }
 
 .accordion-content {
-  padding: 0 20px 40px;
+  padding-bottom: 20px;
 }
 
-.specs-wrapper {
-  max-width: 700px;
-  margin-left: auto;
+.accordion-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.spec-row {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-}
-
-.spec-label {
-  font-weight: 500;
-}
-
-.spec-value {
-  color: #555;
-}
-
-.shipping-wrapper {
-  max-width: 1200px;
-  line-height: 2;
-}
-
-.shipping-wrapper h3 {
+.accordion-list li {
   margin-bottom: 12px;
-  font-size: 18px;
 }
 
-.shipping-wrapper p {
-  margin-bottom: 25px;
-  color: #555;
+.accordion-list a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  transition: opacity 0.2s;
+}
+
+.accordion-list a:hover {
+  opacity: 0.8;
 }
 </style>

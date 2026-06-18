@@ -45,4 +45,19 @@ export default {
 .product-hero > :last-child {
   flex: 1;
 }
+
+/*  */
+
+@media (max-width: 1000px) {
+  .product-hero {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .product-hero > :first-child,
+  .product-hero > :last-child {
+    width: 100%;
+    flex: none;
+  }
+}
 </style>

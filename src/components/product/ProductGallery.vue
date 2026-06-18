@@ -97,4 +97,40 @@ export default {
 .slide-leave-to {
   transform: translateX(-100%);
 }
+
+/*  */
+
+@media (max-width: 1000px) {
+  .gallery {
+    display: flex;
+    flex-direction: column;
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+  .gallery-main {
+    order: 1;
+    width: 100%;
+  }
+
+  .gallery-main img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+
+  .gallery-thumbs {
+    order: 2;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  .thumb {
+    width: 70px;
+    height: 70px;
+    flex-shrink: 0;
+  }
+}
 </style>

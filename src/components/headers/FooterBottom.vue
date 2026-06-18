@@ -49,4 +49,28 @@ export default {
   transform: translateY(6px);
   color: #fff;
 }
+@media (max-width: 1000px) {
+  .footer-bottom {
+    margin-top: 30px;
+    padding-bottom: 80px;
+  }
+
+  .container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .copyright {
+    order: 1;
+    transform: none;
+    text-align: center;
+  }
+
+  .payments {
+    order: 2;
+    justify-content: center;
+  }
+}
 </style>

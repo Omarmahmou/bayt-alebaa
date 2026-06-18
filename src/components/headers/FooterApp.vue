@@ -3,11 +3,18 @@
     <div class="container">
       <div class="footer-top">
         <FooterContact />
-        <FooterSection title="عن بيت الإباء" :items="aboutItems" />
 
-        <FooterSection title="الدعم" :items="supportItems" />
+        <div class="footer-sections desktop-sections">
+          <FooterSection title="عن بيت الإباء" :items="aboutItems" />
+          <FooterSection title="الدعم" :items="supportItems" />
+          <FooterSection title="روابط سريعة" :items="linksItems" />
+        </div>
 
-        <FooterSection title="روابط سريعة" :items="linksItems" />
+        <div class="mobile-sections">
+          <FooterAccordion title="عن بيت الإباء" :items="aboutItems" />
+          <FooterAccordion title="الدعم" :items="supportItems" />
+          <FooterAccordion title="روابط سريعة" :items="linksItems" />
+        </div>
       </div>
       <FooterBottom />
     </div>
@@ -15,6 +22,7 @@
 </template>
 
 <script>
+import FooterAccordion from "./FooterAccordion.vue";
 import FooterBottom from "./FooterBottom.vue";
 import FooterContact from "./FooterContact.vue";
 import FooterSection from "./FooterSection.vue";
@@ -43,6 +51,7 @@ export default {
     FooterContact,
     FooterSection,
     FooterBottom,
+    FooterAccordion,
   },
 };
 </script>
@@ -55,14 +64,44 @@ footer {
 }
 
 .container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 18px 0 0;
+  max-width: 1300px;
+  /* margin: auto; */
+  padding: 18px 20px 0;
 }
+
 .footer-top {
   display: flex;
   justify-content: space-between;
   gap: 60px;
   flex-wrap: wrap;
+}
+
+.footer-sections {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mobile-sections {
+  display: none;
+}
+@media (max-width: 1000px) {
+  .footer-top {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .desktop-sections {
+    display: none;
+  }
+
+  .mobile-sections {
+    display: block;
+  }
+  .container {
+    max-width: 750px;
+    /* margin: auto; */
+    padding: 18px 20px 0;
+  }
 }
 </style>

@@ -91,4 +91,10 @@ export default {
   width: 100%;
   padding: 0 20px;
 }
+@media (max-width: 1000px) {
+  .accordion-section {
+    max-width: 750px;
+    margin: 0 auto;
+  }
+}
 </style>

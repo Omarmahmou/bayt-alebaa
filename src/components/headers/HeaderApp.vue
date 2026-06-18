@@ -1,10 +1,11 @@
 <template>
   <header class="header">
-    <div class="container">
+    <div class="container desktop-header">
       <HeaderLogo />
       <HeaderNav />
       <HeaderIcons :cartCount="cartCount" />
     </div>
+    <HeaderMobile :cartCount="cartCount" />
   </header>
 </template>
 
@@ -12,12 +13,14 @@
 import HeaderIcons from "./HeaderIcons.vue";
 import HeaderNav from "./HeaderNav.vue";
 import HeaderLogo from "./HeaderLogo.vue";
+import HeaderMobile from "./HeaderMobile.vue";
 
 export default {
   components: {
     HeaderIcons,
     HeaderNav,
     HeaderLogo,
+    HeaderMobile,
   },
   props: {
     cartCount: Number,
@@ -26,11 +29,22 @@ export default {
 </script>
 
 <style scoped>
-.header {
+/* .header {
   position: sticky;
   top: 0;
   z-index: 1000;
   background: #fff;
+  min-height: 75px;
+} */
+
+.header {
+  position: fixed; /* بدل sticky */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: #fff;
+  min-height: 75px;
 }
 
 .container {
@@ -41,5 +55,10 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+@media (max-width: 1000px) {
+  .desktop-header {
+    display: none;
+  }
 }
 </style>

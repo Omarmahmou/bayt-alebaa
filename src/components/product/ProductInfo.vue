@@ -443,4 +443,130 @@ export default {
 .Speak_with_product_expert_icon {
   flex-shrink: 0;
 }
+
+/*  */
+@media (max-width: 1000px) {
+  .product-info {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+    direction: rtl;
+    text-align: right;
+    align-items: stretch;
+  }
+
+  .product-header,
+  .product-meta,
+  .price-section,
+  .coupon-section,
+  .qty-cart-row,
+  .links,
+  .total,
+  .bulk-price,
+  .shipping {
+    width: 100%;
+  }
+
+  .product-header h1 {
+    font-size: 22px;
+    line-height: 1.6;
+  }
+
+  .price-section {
+    justify-content: space-between;
+  }
+
+  .coupon-section {
+    align-items: flex-start;
+  }
+
+  .links {
+    justify-content: flex-start;
+  }
+
+  /* quantity + add to cart */
+
+  .qty-cart-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .qty-wrapper {
+    flex: 0 0 30%;
+    width: auto;
+  }
+
+  .add-cart {
+    flex: 0 0 65%;
+    width: auto;
+  }
+
+  .shipping {
+    padding: 18px;
+  }
+}
+/* @media (max-width: 1000px) {
+
+  .product-info {
+    width: 100%;
+    direction: rtl;
+    align-items: stretch;
+    text-align: right;
+  }
+
+  .product-header,
+  .product-meta,
+  .price-section,
+  .coupon-section,
+  .qty-cart-row,
+  .links,
+  .total,
+  .bulk-price,
+  .shipping {
+    width: 100%;
+  }
+
+  .product-header h1 {
+    font-size: 22px;
+    line-height: 1.6;
+  }
+
+  .price-section {
+    justify-content: space-between;
+  }
+
+  .coupon-section {
+    align-items: flex-start;
+  }
+
+  .qty-cart-row {
+    gap: 12px;
+  }
+
+  .add-cart {
+    flex: 1;
+  }
+
+  .links {
+    justify-content: flex-start;
+  }
+
+  .shipping {
+    padding: 18px;
+  }
+
+  .shipping-icon {
+    margin-left: 16px;
+  }
+
+  .shipping-link {
+    margin-right: 16px;
+  }
+
+  .whatsapp {
+    width: fit-content;
+    min-width: 140px;
+  }
+} */
 </style>
