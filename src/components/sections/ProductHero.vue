@@ -46,8 +46,6 @@ export default {
   flex: 1;
 }
 
-/*  */
-
 @media (max-width: 1000px) {
   .product-hero {
     flex-direction: column;

@@ -29,16 +29,8 @@ export default {
 </script>
 
 <style scoped>
-/* .header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: #fff;
-  min-height: 75px;
-} */
-
 .header {
-  position: fixed; /* بدل sticky */
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;

@@ -1,7 +1,6 @@
 <template>
   <div>
     <div class="mobile-wrapper">
-      <!-- Top Header -->
       <div class="mobile-header">
         <button class="icon-btn" @click="toggleMenu">☰</button>
         <HeaderLogo />
@@ -22,7 +21,6 @@
         </button>
       </div>
 
-      <!-- Dropdown Menu -->
       <transition name="slide">
         <div v-if="menuOpen" class="mobile-menu">
           <ul>
@@ -110,7 +108,6 @@
           </svg>
         </button>
       </div>
-      <!-- Bottom Navigation -->
     </div>
   </div>
 </template>
@@ -191,7 +188,9 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 50px;
+  /* third */
+  /* padding: 0 50px; */
+  padding: 0 16px;
   box-sizing: border-box;
   background: #fff;
 }

@@ -100,7 +100,7 @@ footer {
   }
   .container {
     max-width: 750px;
-    /* margin: auto; */
+
     padding: 18px 20px 0;
   }
 }

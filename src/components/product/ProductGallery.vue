@@ -98,8 +98,6 @@ export default {
   transform: translateX(-100%);
 }
 
-/*  */
-
 @media (max-width: 1000px) {
   .gallery {
     display: flex;
