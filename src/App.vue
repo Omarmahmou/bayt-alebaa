@@ -48,12 +48,7 @@ body {
 body {
   background: #f8f8f8;
 }
-/* first */
-/* .container {
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 0 40px;
-} */
+
 .container {
   width: 100%;
   max-width: 1300px;
